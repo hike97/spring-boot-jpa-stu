@@ -31,4 +31,9 @@ public class HealthRecordServiceImpl implements HealthRecordService{
     public void save(HealthRecordEntity healthRecordEntity) {
         healthRecordRepository.save( healthRecordEntity );
     }
+
+    @Override
+    public void updateById(Integer id) {
+        healthRecordRepository.updateById(id);
+    }
 }

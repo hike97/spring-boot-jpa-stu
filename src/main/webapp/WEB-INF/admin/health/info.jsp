@@ -57,7 +57,7 @@
 				<main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
 					<h1>健康档案</h1>
 					<c:choose>
-						<c:when test="${healthRecord == null}">
+						<c:when test="${healthRecordEntity == null}">
 							<p>暂无健康评估结果</p>
 							<a href="<%=request.getContextPath()%>/healthRecord/toAdd">开启我的健康档案</a>
 							<div>
@@ -65,10 +65,29 @@
 							</div>
 						</c:when>
 						<c:otherwise>
-							<h1>90分</h1>
-							<p>上期评估</p>
-							<p>上期评估时间</p>
-							<a href="<%=request.getContextPath()%>/healthRecord/toAdd?id=${healthRecord.id}">评估本周健康状况</a>
+								<c:if test="${healthRecordEntity.hiddenScore == false}">
+									<h1>${healthRecordEntity.thisScore}分</h1>
+								</c:if>
+
+								<c:if test="${hi_entity.thisScore != null}">
+									<p>上期评估</p>
+									<h1>${hi_entity.thisScore}分</h1>
+									<p>上期评估时间</p>
+									<c:choose>
+										<c:when test="${hi_entity.lastUpdateTime == null}">
+											<p><fmt:formatDate value="${hi_entity.createTime}" pattern="yyyy-MM-dd" /></p>
+										</c:when>
+										<c:otherwise>
+											<p><fmt:formatDate value="${hi_entity.lastUpdateTime}" pattern="yyyy-MM-dd" /></p>
+										</c:otherwise>
+									</c:choose>
+
+								</c:if>
+
+							<div>
+								待评估
+							</div>
+							<a href="<%=request.getContextPath()%>/healthRecord/toAdd?id=${healthRecordEntity.id}">评估本周健康状况</a>
 						</c:otherwise>
 					</c:choose>
 

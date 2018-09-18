@@ -19,30 +19,7 @@
 		<!-- Custom styles for this template -->
 		<link href="<%=request.getContextPath()%>/static/asserts/css/dashboard.css" rel="stylesheet">
 		<style type="text/css">
-			/* Chart.js */
 
-			@-webkit-keyframes chartjs-render-animation {
-				from {
-					opacity: 0.99
-				}
-				to {
-					opacity: 1
-				}
-			}
-
-			@keyframes chartjs-render-animation {
-				from {
-					opacity: 0.99
-				}
-				to {
-					opacity: 1
-				}
-			}
-
-			.chartjs-render-monitor {
-				-webkit-animation: chartjs-render-animation 0.001s;
-				animation: chartjs-render-animation 0.001s;
-			}
 		</style>
 	</head>
 
@@ -101,19 +78,19 @@
 								<label class="form-check-label">规律三餐</label>
 							</div>
 							<div class="form-check form-check-inline">
-								<input class="form-check-input" type="radio" name="thisWeekdiet"  value="-1" <c:if test="${healthRecord.thisWeekdiet==1}">checked="true"</c:if>>
+								<input class="form-check-input" type="radio" name="thisWeekdiet"  value="-1" <c:if test="${healthRecord.thisWeekdiet==-1}">checked="true"</c:if>>
 								<label class="form-check-label">三餐不固定</label>
 							</div>
 							<div class="form-check form-check-inline">
-								<input class="form-check-input" type="radio" name="thisWeekdiet"  value="-2" <c:if test="${healthRecord.thisWeekdiet==2}">checked="true"</c:if>>
+								<input class="form-check-input" type="radio" name="thisWeekdiet"  value="-2" <c:if test="${healthRecord.thisWeekdiet==-2}">checked="true"</c:if>>
 								<label class="form-check-label">不吃早餐</label>
 							</div>
 							<div class="form-check form-check-inline">
-								<input class="form-check-input" type="radio" name="thisWeekdiet"  value="-3" <c:if test="${healthRecord.thisWeekdiet==3}">checked="true"</c:if>>
+								<input class="form-check-input" type="radio" name="thisWeekdiet"  value="-3" <c:if test="${healthRecord.thisWeekdiet==-3}">checked="true"</c:if>>
 								<label class="form-check-label">常吃外卖</label>
 							</div>
 							<div class="form-check form-check-inline">
-								<input class="form-check-input" type="radio" name="thisWeekdiet"  value="-4" <c:if test="${healthRecord.thisWeekdiet==4}">checked="true"</c:if>>
+								<input class="form-check-input" type="radio" name="thisWeekdiet"  value="-4" <c:if test="${healthRecord.thisWeekdiet==-4}">checked="true"</c:if>>
 								<label class="form-check-label">常吃宵夜</label>
 							</div>
 						</div>
@@ -177,11 +154,11 @@
 								<label class="form-check-label">从不</label>
 							</div>
 							<div class="form-check form-check-inline">
-								<input class="form-check-input" type="radio" name="smoke"  value="-1" <c:if test="${healthRecord.smoke==1}">checked="true"</c:if>>
+								<input class="form-check-input" type="radio" name="smoke"  value="-1" <c:if test="${healthRecord.smoke==-1}">checked="true"</c:if>>
 								<label class="form-check-label">偶尔</label>
 							</div>
 							<div class="form-check form-check-inline">
-								<input class="form-check-input" type="radio" name="smoke"  value="-2" <c:if test="${healthRecord.smoke==2}">checked="true"</c:if>>
+								<input class="form-check-input" type="radio" name="smoke"  value="-2" <c:if test="${healthRecord.smoke==-2}">checked="true"</c:if>>
 								<label class="form-check-label">经常</label>
 							</div>
 						</div>
@@ -192,11 +169,11 @@
 								<label class="form-check-label">从不</label>
 							</div>
 							<div class="form-check form-check-inline">
-								<input class="form-check-input" type="radio" name="drink"  value="-1" <c:if test="${healthRecord.drink==1}">checked="true"</c:if>>
+								<input class="form-check-input" type="radio" name="drink"  value="-1" <c:if test="${healthRecord.drink==-1}">checked="true"</c:if>>
 								<label class="form-check-label">偶尔</label>
 							</div>
 							<div class="form-check form-check-inline">
-								<input class="form-check-input" type="radio" name="drink"  value="-2" <c:if test="${healthRecord.drink==2}">checked="true"</c:if>>
+								<input class="form-check-input" type="radio" name="drink"  value="-2" <c:if test="${healthRecord.drink==-2}">checked="true"</c:if>>
 								<label class="form-check-label">经常</label>
 							</div>
 						</div>
@@ -207,11 +184,11 @@
 								<label class="form-check-label">从不</label>
 							</div>
 							<div class="form-check form-check-inline">
-								<input class="form-check-input" type="radio" name="stayUp"  value="-1" <c:if test="${healthRecord.stayUp==1}">checked="true"</c:if>>
+								<input class="form-check-input" type="radio" name="stayUp"  value="-1" <c:if test="${healthRecord.stayUp==-1}">checked="true"</c:if>>
 								<label class="form-check-label">偶尔</label>
 							</div>
 							<div class="form-check form-check-inline">
-								<input class="form-check-input" type="radio" name="stayUp"  value="-2" <c:if test="${healthRecord.stayUp==2}">checked="true"</c:if>>
+								<input class="form-check-input" type="radio" name="stayUp"  value="-2" <c:if test="${healthRecord.stayUp==-2}">checked="true"</c:if>>
 								<label class="form-check-label">经常</label>
 							</div>
 						</div>
@@ -222,26 +199,26 @@
 								<label class="form-check-label">易入睡</label>
 							</div>
 							<div class="form-check form-check-inline">
-								<input class="form-check-input" type="radio" name="sleepCondition"  value="-1" <c:if test="${healthRecord.sleepCondition==1}">checked="true"</c:if>>
+								<input class="form-check-input" type="radio" name="sleepCondition"  value="-1" <c:if test="${healthRecord.sleepCondition==-1}">checked="true"</c:if>>
 								<label class="form-check-label">困难</label>
 							</div>
 							<div class="form-check form-check-inline">
-								<input class="form-check-input" type="radio" name="sleepCondition"  value="-2" <c:if test="${healthRecord.sleepCondition==2}">checked="true"</c:if>>
+								<input class="form-check-input" type="radio" name="sleepCondition"  value="-2" <c:if test="${healthRecord.sleepCondition==-2}">checked="true"</c:if>>
 								<label class="form-check-label">早醒</label>
 							</div>
 						</div>
 						<div class="form-group">
 							<label>睡眠时长</label><br/>
 							<div class="form-check form-check-inline">
-								<input class="form-check-input" type="radio" name="sleepHours"  value="-2" <c:if test="${healthRecord.sleepHours==0}">checked="true"</c:if>>
+								<input class="form-check-input" type="radio" name="sleepHours"  value="-2" <c:if test="${healthRecord.sleepHours==-2}">checked="true"</c:if>>
 								<label class="form-check-label">6小时以下</label>
 							</div>
 							<div class="form-check form-check-inline">
-								<input class="form-check-input" type="radio" name="sleepHours"  value="-1" <c:if test="${healthRecord.sleepHours==1}">checked="true"</c:if>>
+								<input class="form-check-input" type="radio" name="sleepHours"  value="-1" <c:if test="${healthRecord.sleepHours==-1}">checked="true"</c:if>>
 								<label class="form-check-label">6-8小时</label>
 							</div>
 							<div class="form-check form-check-inline">
-								<input class="form-check-input" type="radio" name="sleepHours"  value="0" <c:if test="${healthRecord.sleepHours==2}">checked="true"</c:if>>
+								<input class="form-check-input" type="radio" name="sleepHours"  value="0" <c:if test="${healthRecord.sleepHours==0}">checked="true"</c:if>>
 								<label class="form-check-label">8小时以上</label>
 							</div>
 						</div>
@@ -295,7 +272,7 @@
 						<c:if test="${healthRecord !=null}">
 							<div class="form-group">
 								<label>婚姻状况</label>
-								<select class="form-control" name="year">
+								<select class="form-control" name="maritalStatus">
 									<option value="0" <c:if test="${healthRecord.maritalStatus == 0}">selected</c:if>>已婚</option>
 									<option value="1" <c:if test="${healthRecord.maritalStatus == 1}">selected</c:if>>未婚</option>
 									<option value="2" <c:if test="${healthRecord.maritalStatus == 2}">selected</c:if>>离异</option>
@@ -304,7 +281,7 @@
 							</div>
 							<div class="form-group">
 								<label>过敏史</label>
-								<textarea class="form-control" name="allergicHistory">${healthRecord.allergicHistory}</textarea>
+								<textarea class="form-control" name="allergicHistory">${healthRecord.allergicHistory} </textarea>
 							</div>
 							<div class="form-group">
 								<label>家族病史</label>

@@ -58,7 +58,9 @@
 					<h1>健康档案结果</h1>
 					<h1>${healthRecordEntity.thisScore}</h1>
 					<p>上期评估</p>
+					<h1>${healthRecordEntity.historyScoce}</h1>
 					<p>上期评估时间</p>
+					<p></p>
 					<a href="<%=request.getContextPath()%>/healthRecord/toAdd?id=${healthRecordEntity.id}">评估本周健康状况</a>
 				</main>
 			</div>
@@ -75,7 +77,7 @@
 		<script type="text/javascript" src="<%=request.getContextPath()%>/static/asserts/js/feather.min.js" ></script>
 		<script>
 			$(function () {
-				alert("${healthRecordEntity.id}");
+				//alert("${healthRecordEntity.id}");
             })
 		</script>
 

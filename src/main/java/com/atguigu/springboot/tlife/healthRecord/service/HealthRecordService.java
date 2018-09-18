@@ -16,4 +16,6 @@ public interface HealthRecordService {
     HealthRecordEntity findById(String id);
 
     void save(HealthRecordEntity healthRecordEntity);
+
+    void updateById(Integer id);
 }

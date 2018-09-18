@@ -5,7 +5,6 @@ import com.atguigu.springboot.entity.IdEntity;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
-import java.util.Arrays;
 import java.util.Date;
 
 /**
@@ -16,6 +15,10 @@ import java.util.Date;
 @Entity
 @Table(name = "t_healthrecord")//省略 表明类名小写
 public class HealthRecordEntity extends IdEntity{
+
+    public HealthRecordEntity() {
+    }
+
 
     private Integer userId;//用户Id关联
     private Integer gender;//0女 1男
@@ -96,7 +99,15 @@ public class HealthRecordEntity extends IdEntity{
         其他个人习惯
      */
     private String otherConditions;
+    private boolean hiddenScore;
 
+    public boolean isHiddenScore() {
+        return hiddenScore;
+    }
+
+    public void setHiddenScore(boolean hiddenScore) {
+        this.hiddenScore = hiddenScore;
+    }
     public enum OtherCondition{
         PHUBBER("低头族","10",-1),
         SEDENTARY("久坐","20",-1),
@@ -150,9 +161,9 @@ public class HealthRecordEntity extends IdEntity{
     private Date createTime;//本次创建时间
     private Date lastUpdateTime;//上期评估时间
     private Integer thisScore;//本次分数
-    private Integer historyScore; //上期评估分数
     private String result;//评分结果
     private Integer status;//0 待评估 1 此前未有评估 2 评估过本周未有评估 3 此前有过评估并再次评估
+
 
     public Integer getUserId() {
         return userId;
@@ -308,14 +319,6 @@ public class HealthRecordEntity extends IdEntity{
         this.thisScore = thisScore;
     }
 
-    public Integer getHistoryScore() {
-        return historyScore;
-    }
-
-    public void setHistoryScore(Integer historyScore) {
-        this.historyScore = historyScore;
-    }
-
     public String getResult(Integer thisScore) {
         if (thisScore<=50){
             result = "一般";
@@ -397,7 +400,6 @@ public class HealthRecordEntity extends IdEntity{
                 ", createTime=" + createTime +
                 ", lastUpdateTime=" + lastUpdateTime +
                 ", thisScore=" + thisScore +
-                ", historyScore=" + historyScore +
                 ", result='" + result + '\'' +
                 ", status=" + status +
                 '}';
