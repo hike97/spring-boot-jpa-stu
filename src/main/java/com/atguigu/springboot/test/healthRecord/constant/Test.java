@@ -1,4 +1,4 @@
-package com.atguigu.springboot.tlife.healthRecord.constant;
+package com.atguigu.springboot.test.healthRecord.constant;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;

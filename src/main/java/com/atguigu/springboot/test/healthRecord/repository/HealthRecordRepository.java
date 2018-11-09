@@ -1,6 +1,6 @@
-package com.atguigu.springboot.tlife.healthRecord.repository;
+package com.atguigu.springboot.test.healthRecord.repository;
 
-import com.atguigu.springboot.tlife.healthRecord.repository.entity.HealthRecordEntity;
+import com.atguigu.springboot.test.healthRecord.repository.entity.HealthRecordEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;

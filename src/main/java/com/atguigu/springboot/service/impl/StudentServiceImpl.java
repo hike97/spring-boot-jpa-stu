@@ -19,7 +19,7 @@ public class StudentServiceImpl implements StudentService {
 
     public Student getById(Integer id){
 
-        return studentRepository.findOne( id );
+        return studentRepository.getOne( id );
     }
 
     @Override
@@ -40,7 +40,7 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public void delete(Integer id) {
-        studentRepository.delete( id );
+        studentRepository.deleteById( id );
     }
 
 

@@ -1,8 +1,8 @@
-package com.atguigu.springboot.tlife.healthRecord.service.impl;
+package com.atguigu.springboot.test.healthRecord.service.impl;
 
-import com.atguigu.springboot.tlife.healthRecord.repository.HealthRecordRepository;
-import com.atguigu.springboot.tlife.healthRecord.repository.entity.HealthRecordEntity;
-import com.atguigu.springboot.tlife.healthRecord.service.HealthRecordService;
+import com.atguigu.springboot.test.healthRecord.repository.HealthRecordRepository;
+import com.atguigu.springboot.test.healthRecord.repository.entity.HealthRecordEntity;
+import com.atguigu.springboot.test.healthRecord.service.HealthRecordService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,7 +24,7 @@ public class HealthRecordServiceImpl implements HealthRecordService{
 
     @Override
     public HealthRecordEntity findById(String id) {
-        return healthRecordRepository.findOne( Integer.valueOf( id ) );
+        return healthRecordRepository.getOne( Integer.valueOf( id ) );
     }
 
     @Override

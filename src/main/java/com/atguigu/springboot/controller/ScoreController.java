@@ -101,6 +101,7 @@ public class ScoreController extends BaseController {
     @DeleteMapping("/score/{id}")
     public String deleteEmployee(@PathVariable("id") Integer id){
         scoreService.delete(id);
+        System.out.println( "hehehe" );
         return "redirect:/score/info/scores/0";
     }
     //判断学生是否有成绩记录录入

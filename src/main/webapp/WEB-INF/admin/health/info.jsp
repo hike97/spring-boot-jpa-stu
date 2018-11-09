@@ -85,7 +85,15 @@
 								</c:if>
 
 							<div>
-								待评估
+								<c:if test="${healthRecordEntity.thisScore<=50}">
+									<h1>一般</h1>
+								</c:if>
+								<c:if test="${healthRecordEntity.thisScore>50 and healthRecordEntity.thisScore<=80}">
+									<h1>较好</h1>
+								</c:if>
+								<c:if test="${healthRecordEntity.thisScore>80}">
+									<h1>优秀</h1>
+								</c:if>
 							</div>
 							<a href="<%=request.getContextPath()%>/healthRecord/toAdd?id=${healthRecordEntity.id}">评估本周健康状况</a>
 						</c:otherwise>

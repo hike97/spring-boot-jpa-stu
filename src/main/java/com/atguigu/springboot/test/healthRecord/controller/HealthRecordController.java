@@ -1,21 +1,18 @@
-package com.atguigu.springboot.tlife.healthRecord.controller;
+package com.atguigu.springboot.test.healthRecord.controller;
 
 import com.atguigu.springboot.BaseController;
 import com.atguigu.springboot.entity.Student;
-import com.atguigu.springboot.tlife.healthRecord.constant.Location;
-import com.atguigu.springboot.tlife.healthRecord.repository.entity.HealthRecordEntity;
-import com.atguigu.springboot.tlife.healthRecord.service.HealthRecordService;
+import com.atguigu.springboot.test.healthRecord.constant.Location;
+import com.atguigu.springboot.test.healthRecord.repository.entity.HealthRecordEntity;
+import com.atguigu.springboot.test.healthRecord.service.HealthRecordService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
 
 import java.time.DayOfWeek;
 import java.time.Instant;
@@ -96,7 +93,6 @@ public class HealthRecordController extends BaseController{
         }
 
         //添加or编辑页面
-        //添加页面
         @GetMapping("/toAdd")
         public String toAddPage(){
                 String id = getParameter( "id" );

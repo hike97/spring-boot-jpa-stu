@@ -18,7 +18,7 @@ public class ScoreServiceImpl implements ScoreService {
     private ScoreRepository scoreRepository;
 
     public Score getById(Integer id){
-       return scoreRepository.findOne( id );
+       return scoreRepository.getOne( id );
     }
 
 
@@ -36,12 +36,12 @@ public class ScoreServiceImpl implements ScoreService {
 
     @Override
     public void delete(Integer id) {
-        scoreRepository.delete( id );
+        scoreRepository.deleteById( id );
     }
 
     @Override
     public Score selectById(Integer id) {
-        return scoreRepository.findOne( id );
+        return scoreRepository.getOne( id );
     }
 
     @Override
