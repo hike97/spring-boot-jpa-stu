@@ -14,7 +14,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  * spring 5 弃用 WebMvcConfigurerAdapter
  * extends WebMvcConfigurerAdapter 改为 implements WebMvcConfigurer
  */
-@Configuration
+//@Configuration
 public class MyMvcConfig implements WebMvcConfigurer {
     //"/login.html","/","/user/login","/static/**"
 //    @Override
